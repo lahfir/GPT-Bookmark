@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmarked Responses</title>
+    <link href="tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="highlight/styles/qtcreator-dark.min.css" />
+    <style>
+      * {
+        block-size: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-width: 600px;
+        min-height: 400px;
+        overflow-x: hidden;
+        transition: all 0.2s ease;
+        padding: 0;
+      }
+      pre {
+        border-radius: 4px;
+
+        /* white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word; */
+      }
+
+      code {
+        font-size: 0.9rem;
+      }
+
+      pre,
+      pre code {
+        background-color: black;
+        border-radius: 10px;
+        overflow-x: scroll;
+      }
+
+      .hljs {
+        background-color: black;
+      }
+
+      #nav {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body
+    class="dark:bg-white transition-all duration-150 items-center flex flex-col relative"
+  >
+    <nav
+      id="nav"
+      class="sticky top-0 flex items-center justify-between z-10 h-14 py-2 px-3 font-semibold bg-white dark:bg-gray-800 w-screen dark:text-white shadow-xl"
+    >
+      <h1 class="font-semibold text-lg" id="chat-name"></h1>
+      <img
+        src="images/Frame 512.png"
+        class="h-8 w-8 rounded-full logo"
+        alt="logo"
+      />
+    </nav>
+    <h1
+      class="text-slate-900 dark:text-white text-2xl font-bold tracking-tight my-3"
+    >
+      Your Bookmarks
+    </h1>
+    <h3 class="italic text-base font-medium text-gray-400" id="message"></h3>
+    <svg
+      id="loading"
+      stroke="currentColor"
+      fill="none"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="animate-spin text-center text-gray-400 dark:text-gray-500 m-5"
+      height="1em"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line x1="12" y1="2" x2="12" y2="6"></line>
+      <line x1="12" y1="18" x2="12" y2="22"></line>
+      <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+      <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+      <line x1="2" y1="12" x2="6" y2="12"></line>
+      <line x1="18" y1="12" x2="22" y2="12"></line>
+      <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+      <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+    </svg>
+    <div id="bookmarks" class="bookmarks"></div>
+    <script src="highlight/highlight.min.js"></script>
+    <script src="themeListener.js" type="module"></script>
+    <script src="textParser.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
