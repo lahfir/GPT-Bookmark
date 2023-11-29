@@ -20,7 +20,7 @@ Discover the power of seamless bookmarking with **Bookmark GPT**, the ultimate t
 
 ## Getting Started
 
-(Provide installation and setup instructions here)
+Click Here(https://chromewebstore.google.com/detail/bookmark-gpt/bdcjeihflkdfmdlfddbfboofepeldach?hl=en-GB) to install Bookmark GPT from the Chrome Web Store.
 
 ## Usage
 
@@ -28,11 +28,7 @@ Discover the power of seamless bookmarking with **Bookmark GPT**, the ultimate t
 
 ## Contributing
 
-(Information for potential contributors)
-
-## License
-
-(Include license information here)
+A follow on github would be much appreciated!
 
 Bookmark GPT is more than a bookmarking tool; it's an innovative way to harness the full potential of your AI chat interactions. Transform your AI chat interactions into a well-organized, easily accessible knowledge base with Bookmark GPT!
 
