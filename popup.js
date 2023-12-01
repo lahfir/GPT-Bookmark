@@ -50,12 +50,14 @@ function removeBookmark(id) {
 
   chrome.storage.local.get("bookmarks", function (result) {
     const bookmarks = result.bookmarks || {};
-    if (bookmarks[globalUserId] && bookmarks[globalUserId].bookmarks) {
-      bookmarks[globalUserId].bookmarks[globalChatId].forEach((bookmark, i) => {
-        if (bookmark.id === id) {
-          bookmarks[globalUserId].bookmarks[globalChatId].splice(i, 1);
+    if (bookmarks[globalUserId] && bookmarks[globalUserId]?.bookmarks) {
+      bookmarks[globalUserId]?.bookmarks[globalChatId]?.forEach(
+        (bookmark, i) => {
+          if (bookmark.id === id) {
+            bookmarks[globalUserId].bookmarks[globalChatId].splice(i, 1);
+          }
         }
-      });
+      );
     }
     chrome.storage.local.set({ bookmarks: bookmarks }, function () {
       chrome.runtime.sendMessage({ type: "bookmarkUpdated" });
@@ -144,14 +146,17 @@ function populateBookmarks(chatId) {
       const bookmarks = result.bookmarks || {};
       const bookmarksDiv = document.getElementById("bookmarks");
       bookmarksDiv.innerHTML = "";
-      if (bookmarks[userId].chatNames && bookmarks[userId].chatNames[chatId]) {
+      if (
+        bookmarks[userId]?.chatNames &&
+        bookmarks[userId]?.chatNames[chatId]
+      ) {
         const chatName = document.getElementById("chat-name");
         chatName.innerHTML = bookmarks[userId].chatNames[chatId];
       }
       if (
         bookmarks[userId] &&
-        bookmarks[userId].bookmarks &&
-        bookmarks[userId].bookmarks[chatId]
+        bookmarks[userId]?.bookmarks &&
+        bookmarks[userId]?.bookmarks[chatId]
       ) {
         bookmarks[userId].bookmarks[chatId].forEach((bookmark) => {
           const div = displayFormattedText(bookmark.content, bookmark.id);
